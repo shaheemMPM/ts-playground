@@ -12,6 +12,7 @@
     "start": "ts-node src/index.ts"
   },
   "dependencies": {
+    "dayjs": "^1.11.13",
     "graphql": "^16.9.0",
     "graphql-tag": "^2.12.6"
   }

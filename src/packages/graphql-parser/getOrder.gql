@@ -1,0 +1,146 @@
+query GetOrder($id: ID!) {
+  order(id: $id) {
+    createdAt
+    discountCodes
+    email
+    fullyPaid
+    id
+    createdAt
+    shippingLine {
+      title
+    }
+    physicalLocation {
+      address {
+        address1
+        address2
+        city
+        province
+        zip
+        phone
+      }
+    }
+    fulfillments {
+      trackingInfo {
+        company
+        number
+        url
+      }
+    }
+    lineItems(first: 10) {
+      edges {
+        node {
+          id
+          name
+          quantity
+          originalTotalSet {
+            presentmentMoney {
+              amount
+              currencyCode
+            }
+          }
+          sku
+          title
+          variantTitle
+          image {
+            id
+            url
+          }
+          variant {
+            id
+            barcode
+            compareAtPrice
+          }
+        }
+      }
+    }
+    name
+    note
+    paymentGatewayNames
+    phone
+    subtotalPriceSet {
+      presentmentMoney {
+        amount
+        currencyCode
+      }
+    }
+    subtotalLineItemsQuantity
+    taxLines {
+      priceSet {
+        presentmentMoney {
+          amount
+          currencyCode
+        }
+      }
+      rate
+      ratePercentage
+      title
+    }
+    taxesIncluded
+    totalPriceSet {
+      presentmentMoney {
+        amount
+        currencyCode
+      }
+    }
+    totalDiscountsSet {
+      presentmentMoney {
+        amount
+        currencyCode
+      }
+    }
+    totalRefundedSet {
+      presentmentMoney {
+        amount
+      }
+    }
+    totalTaxSet {
+      presentmentMoney {
+        amount
+      }
+    }
+    totalShippingPriceSet {
+      presentmentMoney {
+        amount
+      }
+    }
+    totalWeight
+    billingAddress {
+      address1
+      address2
+      city
+      company
+      country
+      countryCodeV2
+      firstName
+      lastName
+      name
+      phone
+      province
+      provinceCode
+      zip
+      phone
+    }
+    shippingAddress {
+      address1
+      address2
+      city
+      company
+      country
+      countryCodeV2
+      phone
+      zip
+      province
+      firstName
+      lastName
+      phone
+    }
+    currencyCode
+    currentTotalWeight
+    customer {
+      displayName
+      email
+    }
+    displayFinancialStatus
+    displayFulfillmentStatus
+  }
+}

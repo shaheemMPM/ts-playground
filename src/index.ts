@@ -1,7 +1,7 @@
-import graphqltag from "./packages/graphql-tag";
+import graphqlParser from "./packages/graphql-parser";
 
 const main = () => {
-  graphqltag();
+  graphqlParser();
 };
 
 main();
