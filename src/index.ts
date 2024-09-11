@@ -1,12 +1,10 @@
-import { chunk } from "./packages/array-operations";
+// import { chunk } from "./packages/array-operations";
+import { renderLiquid } from "./packages/liquid-render";
 // import graphqlParser from "./packages/graphql-parser";
 
-const main = () => {
-  const baseArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
-  const chunks = chunk(baseArray, 3);
-
-  console.log("chunks: ", chunks);
+const main = async () => {
+  const html = await renderLiquid("<h1>{{ name }}</h1>", { name: "shaheem" });
+  console.log("html: ", html);
 };
 
 main();
